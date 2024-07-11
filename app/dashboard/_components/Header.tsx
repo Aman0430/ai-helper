@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import { Search } from "lucide-react";
 import React from "react";
 
@@ -14,10 +15,11 @@ const Header = (props: Props) => {
           className="outline-none bg-emerald-50"
         />
       </div>
-      <div>
+      <div className="flex gap-2">
         <h2 className="bg-primary p-1 rounded-full text-xs text-white px-2">
           Join Membership for 20₹ /Month
         </h2>
+        <UserButton />
       </div>
     </div>
   );
