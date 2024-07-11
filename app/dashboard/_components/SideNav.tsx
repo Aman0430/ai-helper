@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { History, LucideHome, Settings2, Wallet2Icon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
@@ -57,17 +58,19 @@ const SideNav = (props: Props) => {
 
         <div>
           {MenuList.map((menu, index) => (
-            <div
-              className={cn(
-                menu.colorHover,
-                "flex gap-2 mb-3 p-3 rounded-md transition cursor-pointer",
-                pathname === menu.path && "text-gray-900 bg-rose-100"
-              )}
-              key={index}
-            >
-              <menu.icon className={cn(menu.color)} />
-              <h2>{menu.name}</h2>
-            </div>
+            <Link href={menu.path}>
+              <div
+                className={cn(
+                  menu.colorHover,
+                  "flex gap-2 mb-3 p-3 rounded-md transition cursor-pointer",
+                  pathname === menu.path && "text-gray-900 bg-rose-100"
+                )}
+                key={index}
+              >
+                <menu.icon className={cn(menu.color)} />
+                <h2>{menu.name}</h2>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -33,7 +33,7 @@ export default [
       {
         label: "Enter your blog topic",
         field: "input",
-        name: "niche",
+        name: "title",
         required: true,
       },
       {
