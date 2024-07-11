@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "@toast-ui/editor/dist/toastui-editor.css";
 
 import { Editor } from "@toast-ui/react-editor";
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
 
-type Props = {};
+type Props = {
+  aiOutput: string;
+};
 
-const OutputSection = (props: Props) => {
+const OutputSection = ({ aiOutput }: Props) => {
   const editorRef: any = React.useRef();
+
+  useEffect(() => {
+    const editorInstance = editorRef.current.getInstance();
+    editorInstance.setMarkdown(aiOutput);
+  }, [aiOutput]);
 
   return (
     <div className="shadow-md border rounded-lg bg-emerald-50">

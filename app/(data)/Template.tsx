@@ -5,7 +5,7 @@ export default [
     category: "blog",
     icon: "https://cdn-icons-png.flaticon.com/128/2800/2800015.png",
     aiPrompt:
-      "Give me 5 blog idea in bullet wise only based on give niche and outline of topic and give me result in Rich text editor format.",
+      "Give me 5 blog idea in bullet wise only based on niche and outline and give me result in Rich text editor format.",
     slug: "generate-blog-title",
     form: [
       {
@@ -49,7 +49,7 @@ export default [
     category: "blog",
     icon: "https://cdn-icons-png.flaticon.com/128/6580/6580513.png",
     aiPrompt:
-      "Generate top 5 Blog Topic Ideas in bullet point wise based on give niche of topic and give me result in Rich text editor format.",
+      "Generate top 5 Blog Topic Ideas in bullet point only, (no description) based on niche in Rich text editor format.",
     slug: "generate-blog-ideas",
     form: [
       {
@@ -165,7 +165,7 @@ export default [
     category: "coding assistant",
     icon: "https://cdn-icons-png.flaticon.com/128/4248/4248082.png",
     aiPrompt:
-      "Given codingTopic, generate code for the codingTopic and give result in Code format.",
+      "Generate codingPrompt for the codingTopic in codingLanguage and give me result in Rich text editor format.",
     slug: "code-generator",
     form: [
       {
@@ -173,6 +173,33 @@ export default [
         field: "input",
         name: "codingTopic",
         required: true,
+      },
+      {
+        label: "Enter the code language",
+        field: "input",
+        name: "codingLanguage",
+        required: true,
+      },
+      {
+        label: "Enter the prompt for the code",
+        field: "textarea",
+        name: "codingPrompt",
+        required: true,
+      },
+    ],
+  },
+  {
+    name: "Image Generation",
+    desc: "This handy tool creates images based on your input.",
+    category: "image tool",
+    icon: "https://cdn-icons-png.flaticon.com/128/1829/1829586.png",
+    aiPrompt: "Given image, generates an image related to image.",
+    slug: "img-generation",
+    form: [
+      {
+        label: "Enter the explanation of your image",
+        field: "input",
+        name: "image",
       },
     ],
   },
